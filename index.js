@@ -2,8 +2,9 @@
 
 var client = require('spotify-node-applescript');
 var cli = require('cli').enable('version');
+var pkg = require('./package.json');
 
-cli.setApp('./package.json');
+cli.setApp(pkg.name, pkg.version);
 
 cli.parse(null, ['play', 'pause', 'next', 'previous', 'status']);
 
