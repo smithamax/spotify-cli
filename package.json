@@ -9,7 +9,10 @@
   "bin": {
     "spotify": "./index.js"
   },
-  "repository": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Smithamax/spotify-cli.git"
+  },
   "author": "Dominic Smith",
   "license": "BSD",
   "dependencies": {
