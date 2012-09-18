@@ -1,7 +1,7 @@
 spotify-cli
 ===========
 
-This package uses currently uses applescript so it will only work on osx.
+This package currently uses applescript so it will only work on osx.
 
 Maybe once node-libspotify matures we'll use that.
 
