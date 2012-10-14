@@ -22,6 +22,7 @@
   "license": "BSD",
   "dependencies": {
     "spotify-node-applescript": "~0.1.0",
-    "cli": "~0.4.4-1"
+    "cli": "~0.4.4-1",
+    "request": "~2.11.4"
   }
 }

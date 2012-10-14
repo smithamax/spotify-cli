@@ -2,7 +2,9 @@
 
 var client = require('spotify-node-applescript');
 var cli = require('cli').enable('version');
+var request = require('request');
 var pkg = require('./package.json');
+
 
 cli.setApp(pkg.name, pkg.version);
 
@@ -15,13 +17,26 @@ function nowPlaying() {
 	});
 }
 
+function parsePlayArg(arg, callback) {
+	if (arg.toLowerCase().substring(0,8) == 'spotify:') return callback(null, arg);
+
+	request('http://ws.spotify.com/search/1/track.json?q=' +  arg, function (err, res, body) {
+		if (err) return callback(err);
+		if (res.statusCode == 200) {
+			callback(null, JSON.parse(body).tracks[0].href);
+		} else {
+			callback(res.statusCode);
+		}
+	});
+}
 
 cli.main(function (args, options) {
 	if (cli.command == 'play') {
 		if (cli.args.length) {
-
-			client.playTrack(cli.args.shift(), function () {
-				nowPlaying();
+			parsePlayArg(cli.args.join(' '), function (err, url) {
+				client.playTrack(url, function () {
+					nowPlaying();
+				});
 			});
 
 		} else {
