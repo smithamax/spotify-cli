@@ -1,5 +1,3 @@
-#!/usr/bin/env node
-
 var client = require('spotify-node-applescript');
 var cli = require('cli').enable('version');
 var request = require('request');
