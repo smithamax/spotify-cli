@@ -74,7 +74,7 @@ cli.main(function (args, options) {
 			client.getTrack(function(err, track) {
 				if (err) return cli.error(err);
 				cli.info(track.name + " - " + track.artist);
-				cli.progress(state.position / track.duration);
+				cli.progress((state.position * 1000) / track.duration);
 			});
 		});
 	}
