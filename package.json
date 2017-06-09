@@ -1,6 +1,6 @@
 {
   "name": "spotify-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A cli for spotify, currently osx only.",
   "main": "index.js",
   "scripts": {
