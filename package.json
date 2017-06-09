@@ -23,7 +23,6 @@
   "dependencies": {
     "cli": "~1.0.1",
     "request": "~2.11.4",
-    "spotify-node-applescript": "~1.1.0",
-    "terminal-kit": "^1.8.12"
+    "spotify-node-applescript": "~1.1.0"
   }
 }
